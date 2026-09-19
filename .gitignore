@@ -1,0 +1,9 @@
+# Chatbot Hub — gitignore v3
+node_modules/
+.next/
+out/
+build-*.log
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+Thumbs.db
