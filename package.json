@@ -6,7 +6,7 @@
     "dev": "next dev --port 8790 --hostname 127.0.0.1",
     "build": "next build",
     "start": "next start --port 8790 --hostname 127.0.0.1",
-    "test": "node --experimental-strip-types --test tests/",
+    "test": "node --experimental-strip-types --test tests/chat-hub.test.ts",
     "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {

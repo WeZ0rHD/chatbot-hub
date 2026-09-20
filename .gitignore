@@ -3,6 +3,7 @@ node_modules/
 .next/
 out/
 build-*.log
+build-*.log.err
 *.tsbuildinfo
 next-env.d.ts
 .DS_Store
