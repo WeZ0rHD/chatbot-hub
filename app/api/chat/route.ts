@@ -89,13 +89,14 @@ export async function POST(req: NextRequest) {
   } catch {
     return json({ error: "Corps JSON invalide." }, 400);
   }
-  const provider = body.provider as Provider | undefined;
+  const rawProvider = body.provider as string | undefined;
   const model = (body.model ?? "").trim();
   const messages = Array.isArray(body.messages) ? body.messages : [];
-  if (!provider || !model || messages.length === 0)
+  if (!rawProvider || !model || messages.length === 0)
     return json({ error: "provider, model et messages sont requis." }, 400);
-  if (provider === "local" || provider === "mock-fixture")
+  if (rawProvider === "local" || rawProvider === "mock-fixture")
     return json({ error: "Adapter local géré côté client (pas d'appel serveur)." }, 400);
+  const provider = rawProvider as Provider;
 
   // Log volontairement pauvre : aucun secret, aucun contenu.
   console.log(
